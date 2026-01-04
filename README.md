@@ -84,6 +84,8 @@ sl.redact_file("bugreport.txt", "bugreport_redacted.txt")
 
 This typically processes only 5-15% of lines through the model, giving a 5-10x speedup.
 
+The hybrid approach uses regex as a fast pre-filter to identify candidate lines (5-15% of a typical bugreport). The model then precisely identifies and redacts the actual PII within those lines. Regex alone can't distinguish between an IMEI and a random number, or know that "Varun's Pixel Buds" is a Bluetooth device name—that requires language understanding.
+
 ## Performance
 
 | File Size | Lines | Mode | Time (RTX 4050) |
