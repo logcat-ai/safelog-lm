@@ -37,6 +37,8 @@ PII_INDICATORS = re.compile(r"|".join([
     r"secret",
     r"credential",
     r"ssid",
+    r"bluetooth|btgatt|\bbt_|a2dp|\bhfp\b",     # Bluetooth device names ("Varun's Pixel Buds")
+    r"device_?name|display_?name|account_?name|owner_?name|user_?name",  # Name fields
     r"imei",
     r"imsi",
     r"iccid",
